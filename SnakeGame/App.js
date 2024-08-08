@@ -1,0 +1,19 @@
+import { StatusBar } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+
+
+
+
+
+export default function App() {
+   return (
+    <SafeAreaProvider>
+      <GestureHandlerRootView>
+          <StatusBar style ="light"/>
+          <Game />
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
+   );
+}
