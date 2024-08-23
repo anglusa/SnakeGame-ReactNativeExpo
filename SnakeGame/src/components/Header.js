@@ -8,6 +8,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 
 const Header = ({top, score, paused, pause, reload}) => {
+    
     const styleHeader = {
         height: HEADER_HEIGHT + top,
         backgroundColor: colors.p4,

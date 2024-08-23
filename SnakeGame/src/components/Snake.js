@@ -6,7 +6,6 @@ import {
     BORDER_RADIUS,
     GAP,
     HEADER_HEIGHT,
-    HEADER_HEIGHT,
     PIXEL,
     SPEED,
 } from "../consts";
@@ -16,9 +15,9 @@ const Snake = ({ snake , top}) => {
         <>
         {snake.map((node , index) => {
             const nodeStyle = {
-                with: PIXEL,
+                width: PIXEL,
                 height: PIXEL,
-                borderwifth: GAP,
+                borderWidth: GAP,
                 borderColor: colors.p6,
                 borderRadius: BORDER_RADIUS,
                 top: node.y * PIXEL + top + HEADER_HEIGHT,

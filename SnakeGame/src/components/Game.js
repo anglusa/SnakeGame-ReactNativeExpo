@@ -108,7 +108,6 @@ const Game = () => {
                setSnake([head, ...snake.slice(0, -1)]);
           }
      }
-}
 
 function testGameOver(snakeHead) {
      return (
@@ -134,23 +133,23 @@ const RamdomFood = useMemo(() => {
      return <Food coords={{ x: food.x, y: food.y }} top={insets.top} />;
 }, [food, insets.top]);
 
-return (
-     <PanGestureHandler onGestureEvent={handleGesture}>
-          <SafeAreaView style={styles.container}>
-               <Header
-                    top={insets.top}
-                    score={score}
-                    paused={isGamePaused}
-                    pause={() => setIsGamePaused(prev => !prev)}
-                    reload={() => setIsGameOver(prev => !prev)}
-               />
-               <Board rows={ROWS} cols={COLS} top={insets.top} />
-               <Snake snake={snake} top={insets.top} />
-               {randomFood}
-          </SafeAreaView>
-     </PanGestureHandler>
-);
-};
+     return (
+          <PanGestureHandler onGestureEvent={handleGesture}>
+               <SafeAreaView style={styles.container}>
+                    <Header
+                         top={insets.top}
+                         score={score}
+                         paused={isGamePaused}
+                         pause={() => setIsGamePaused(prev => !prev)}
+                         reload={() => setIsGameOver(prev => !prev)}
+                    />
+                    <Board rows={ROWS} cols={COLS} top={insets.top} />
+                    <Snake snake={snake} top={insets.top} />
+                    {randomFood}
+               </SafeAreaView>
+          </PanGestureHandler>
+     );
+}
 
 const styles = StyleSheet.create({
      container: {
