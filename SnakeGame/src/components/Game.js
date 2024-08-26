@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Dimensions, SafeAreaView, StyleSheet } from "react-native";
 import { PanGestureHandler } from "react-native-gesture-handler";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Direction as DirectionType } from "../types";
+import { Direction } from "../types";
 import * as Haptics from "expo-haptics";
 
 const { height } = Dimensions.get("window");
@@ -70,7 +70,7 @@ const Game = () => {
                if (translationY > 0) {
                     setDirection(Direction.Down);
                } else {
-                    setDirection(Direction.up);
+                    setDirection(Direction.Up);
                }
           }
      }
@@ -124,14 +124,14 @@ function testEatsFood(snakeHead, foodLocation) {
 
 function newFoodPosition() {
      return {
-          x: Math.floor(Math.random() * (limits.maxX + 1)),
-          y: Math.floor(Math.random() * (limits.maxY + 1)),
+          x: Math.floor(Math.random() * (limits.maxX)),
+          y: Math.floor(Math.random() * (limits.maxY)),
      }
 };
 
 const RamdomFood = useMemo(() => {
      return <Food coords={{ x: food.x, y: food.y }} top={insets.top} />;
-}, [food, insets.top]);
+}, [food]);
 
      return (
           <PanGestureHandler onGestureEvent={handleGesture}>
@@ -140,12 +140,12 @@ const RamdomFood = useMemo(() => {
                          top={insets.top}
                          score={score}
                          paused={isGamePaused}
-                         pause={() => setIsGamePaused(prev => !prev)}
-                         reload={() => setIsGameOver(prev => !prev)}
+                         pause={() => setIsGamePaused((prev) => !prev)}
+                         reload={() => setIsGameOver((prev)=> !prev)}
                     />
                     <Board rows={ROWS} cols={COLS} top={insets.top} />
                     <Snake snake={snake} top={insets.top} />
-                    {randomFood}
+                    { RandomFood }
                </SafeAreaView>
           </PanGestureHandler>
      );

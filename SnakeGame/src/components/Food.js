@@ -31,7 +31,7 @@ const foodemojis = [
         left: coords.x * PIXEL + BORDER,
     };
     return (
-        <View style={[{ position: "absolute" }, foodstyle]}>
+        <View style={[{ position: "absolute" }, foodStyle]}>
             <Text>{randDomFood}</Text>
         </View>
     );
