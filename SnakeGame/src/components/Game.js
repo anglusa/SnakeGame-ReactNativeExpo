@@ -129,7 +129,7 @@ function newFoodPosition() {
      }
 };
 
-const RamdomFood = useMemo(() => {
+const RandomFood = useMemo(() => {
      return <Food coords={{ x: food.x, y: food.y }} top={insets.top} />;
 }, [food]);
 
